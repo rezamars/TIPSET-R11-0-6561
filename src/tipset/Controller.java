@@ -53,7 +53,7 @@ public class Controller extends Application {
         //set screen-size, procentage of screenresolution
         primaryStage.setX(primaryScreenBounds.getMinX());
         primaryStage.setY(primaryScreenBounds.getMinY());
-        primaryStage.setWidth((primaryScreenBounds.getWidth())/1.4);
+        primaryStage.setWidth((primaryScreenBounds.getWidth())/1.3);
         primaryStage.setHeight((primaryScreenBounds.getHeight())/1.2);
         
         //referring to arrays

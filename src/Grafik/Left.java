@@ -28,7 +28,7 @@ import javafx.stage.Screen;
 //the Left-object of the borderpane
 public class Left extends VBox{
     
-    private Label headingLabel = new Label("Mitt system, (5 MG)");
+    private Label headingLabel = new Label("Mitt system, (2 hel-MG)");
     private Label[] rowNumberlabelArray = new Label[13];
     private Label[] MGArray = new Label[13];
     private ImageView[] imageViewArray = new ImageView[13];

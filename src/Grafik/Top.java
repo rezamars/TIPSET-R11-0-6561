@@ -23,7 +23,7 @@ import javafx.scene.text.FontWeight;
 public class Top extends HBox{
     
     private Label tipsLabel = new Label();
-    private Label systemLabel = new Label("R8-0-27-6561(10)");
+    private Label systemLabel = new Label("R11-0-729-6561(11)");
     private Image image;
     private String imagePath = "tipset.jpg";
     
