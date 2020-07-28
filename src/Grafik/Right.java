@@ -49,7 +49,7 @@ public class Right extends VBox{
         this.setPadding(new Insets(10, 10, 50, 100));  
         this.setSpacing(1);
         
-        //filling the tables-array with zero text
+        //filling the tables-array with blank text
         for (int x = 0 ; x < 27 ; x++){
             for (int y = 0 ; y < 8 ; y++){
                 R11_0_729_Tables[x][y] = "";

@@ -40,7 +40,7 @@ public class ClearButtonListener {
     }
     
     //add listener to clear-button
-    //at click: resetting the MCGs,flags, the results and the textarea
+    //at click: resetting the MGs,flags, the results and the textarea
     //and updating the grafics
     public void addClearButtonListener(){
         

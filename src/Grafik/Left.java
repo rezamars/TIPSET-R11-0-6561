@@ -28,7 +28,7 @@ import javafx.stage.Screen;
 //the Left-object of the borderpane
 public class Left extends VBox{
     
-    private Label headingLabel = new Label("Mitt system, (2 hel-MG)");
+    private Label headingLabel = new Label("Mitt system, 11 hel-RG + 2 hel-MG");
     private Label[] rowNumberlabelArray = new Label[13];
     private Label[] MGArray = new Label[13];
     private ImageView[] imageViewArray = new ImageView[13];
@@ -43,7 +43,7 @@ public class Left extends VBox{
     
     private HBox spaceHbox = new HBox();
     private HBox[] hboxLabelArray = new HBox[13];
-    private boolean flagOf5MGs = false;
+    private boolean flagOf2MGs = false;
     
     private int[] chosenMGIndexes = new int[5];
     
@@ -190,8 +190,8 @@ public class Left extends VBox{
         return imageViewArray;
     }
     
-    public boolean get5MGsFlag(){
-        return flagOf5MGs;
+    public boolean get2MGsFlag(){
+        return flagOf2MGs;
     }
     
     public int[] getChosenMGIndexes(){

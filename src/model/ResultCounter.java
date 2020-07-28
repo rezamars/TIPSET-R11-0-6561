@@ -14,22 +14,22 @@ import javafx.scene.control.TextArea;
  *
  * @author Reza
  */
-//handles counting the number of rights, depending on MGs chosen, result
+//handles counting the number of rights, depending on MGs chosen and the result
 public class ResultCounter {
     
     private int[] chosenMGIndexes;
     private String[] result13Array;
-    private String[][] R8_0_27_Tables;
-    private boolean flagOf5MGs;
+    private String[][] R11_0_729_Tables;
+    private boolean flagOf2MGs;
     
-    private int[] the8unMGmarkedIndexes = new int[8];
+    private int[] the11unMGmarkedIndexes = new int[11];
     
     private int amountOf13 = 0;
     private int amountOf12 = 0;
     private int amountOf11 = 0;
     private int amountOf10 = 0;
     
-    private String[] eightResultsMarks = new String[8];
+    private String[] elevenResultsMarks = new String[11];
     private TextArea numberOfRightsTextArea;
     
     
@@ -37,44 +37,44 @@ public class ResultCounter {
         
         this.chosenMGIndexes = left1.getChosenMGIndexes();
         this.result13Array = center1.getResult13Array();
-        this.R8_0_27_Tables = right1.getSystemTables();
-        this.flagOf5MGs = left1.get5MGsFlag();
+        this.R11_0_729_Tables = right1.getSystemTables();
+        this.flagOf2MGs = left1.get2MGsFlag();
         this.numberOfRightsTextArea = right1.getTextArea();
     }
     
     public void startResultCounter(){
         
-        specify8unMGIndexes();
+        specify11unMGIndexes();
         
     }
     
-    //fills the 8unmarkedMGs-array with indexes that the user has chosen as not MG
-    public void specify8unMGIndexes(){
+    //fills the 11unmarkedMGs-array with indexes that the user has chosen as not MG
+    public void specify11unMGIndexes(){
         
-        for (int x = 0 ; x < the8unMGmarkedIndexes.length ; x++){
-            the8unMGmarkedIndexes[x] = -1;
+        for (int x = 0 ; x < the11unMGmarkedIndexes.length ; x++){
+            the11unMGmarkedIndexes[x] = -1;
         }
         
-        int indexOf5 = 0;
-        int indexOf8 = 0;
+        int indexOf2 = 0;
+        int indexOf11 = 0;
         
         
             for(int i = 0 ; i < 13 ; i++){
                 
-                if(indexOf5 < 5){
+                if(indexOf2 < 2){
                     
-                    if(chosenMGIndexes[indexOf5] == i){
-                        indexOf5++;
+                    if(chosenMGIndexes[indexOf2] == i){
+                        indexOf2++;
                     }
                     else{
-                        the8unMGmarkedIndexes[indexOf8] = i;
-                        indexOf8++;
+                        the11unMGmarkedIndexes[indexOf11] = i;
+                        indexOf11++;
                     }
                 }
                 else{
                     System.out.println("in else, i= " + i);
-                        the8unMGmarkedIndexes[indexOf8] = i;
-                        indexOf8++;
+                        the11unMGmarkedIndexes[indexOf11] = i;
+                        indexOf11++;
                 }
                 
             }
@@ -82,7 +82,7 @@ public class ResultCounter {
         countTheRights();
     }
     
-    //compares the 8 rows of the user with the default tables for R8-0-27 read from file
+    //compares the 11 rows of the user with the default tables for R8-0-27 read from file
     private void countTheRights(){
         
         amountOf13 = 0;
@@ -90,24 +90,24 @@ public class ResultCounter {
         amountOf11 = 0;
         amountOf10 = 0;
         
-        for(int x = 0 ; x < eightResultsMarks.length ; x++){
+        for(int x = 0 ; x < elevenResultsMarks.length ; x++){
             
-            eightResultsMarks[x] = result13Array[the8unMGmarkedIndexes[x]];
+            elevenResultsMarks[x] = result13Array[the11unMGmarkedIndexes[x]];
         }
         
         int numberOfRight = 0 ;
         
-        for(int i = 0 ; i < 27 ; i++){
+        for(int i = 0 ; i < 729 ; i++){
             
             numberOfRight = 0;
-            for(int y = 0 ; y < 8 ; y++){
-                if(R8_0_27_Tables[i][y].equalsIgnoreCase(eightResultsMarks[y])){
+            for(int y = 0 ; y < 11 ; y++){
+                if(R11_0_729_Tables[i][y].equalsIgnoreCase(elevenResultsMarks[y])){
                     numberOfRight++;
                 }
             }
             
-            //adds the 5 MGs that are 1X2-marked from the user
-            numberOfRight +=5;
+            //adds the 2 MGs that are 1X2-marked from the user
+            numberOfRight +=2;
             
             //adds number of rights to the 4 levels of won
             if (numberOfRight == 13){

@@ -118,7 +118,7 @@ public class Center extends VBox{
             
         }
         
-        //filling resultarray with zero text
+        //filling resultarray with blank text
         for(int p = 0 ; p < result13Array.length ; p++){
             result13Array[p] = "";
         }
